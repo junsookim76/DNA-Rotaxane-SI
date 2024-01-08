@@ -1,0 +1,55 @@
+;
+;	File 'topol.top' was generated
+;	By user: yeonho (194600029)
+;	On host: --------------------
+;	At date: Thu Apr 13 17:59:26 2023
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2019.5 (-:
+;	
+;	Executable:   /opt/anaconda3/envs/gmx2019.5/bin/gmx
+;	Data prefix:  /opt/anaconda3/envs/gmx2019.5
+;	Working dir:  -------------------------------------
+;	Command line:
+;	  gmx pdb2gmx -f at76_lk8_woPO2.pdb -renum
+;	Force field was read from current directory or a relative path - path added.
+;
+
+; Include forcefield parameters
+#include "./amber14sb_parmbsc1_cufix.ff/forcefield.itp"
+
+; Include chain topologies
+; Copy the circular and linear DNA force field
+#include "./circ76_lin32_itp/topol_linear_DNA_chain_A.itp"
+#include "./circ76_lin32_itp/topol_linear_DNA_chain_B.itp"
+#include "./circ76_lin32_itp/topol_circular_DNA_chain_A.itp"
+#include "./circ76_lin32_itp/topol_circular_DNA_chain_B.itp"
+
+; Include water topology
+#include "./amber14sb_parmbsc1_cufix.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./amber14sb_parmbsc1_cufix.ff/ions.itp"
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+lin_DNA_chain_A         1
+lin_DNA_chain_B         1
+circ_DNA_chain_A        1
+circ_DNA_chain_B        1
+SOL         72149
+NA               423
+CL               207
