@@ -1,0 +1,58 @@
+title                   = AT-82BPS NVT equilibration 
+define                  = -DLINEAR_POSRES1  ; position restrain the protein
+
+; Run parameters
+integrator              = md        ; leap-frog integrator
+nsteps                  = 1000000000     ; 2 fs * 1 000 000 000 = 2 us
+dt                      = 0.002     ; 2 fs
+
+; Output control
+nstxout                 = 5000000   ; save coordinates every 10.0 ns
+nstvout                 = 5000000   ; save velocities every 10.0 ns
+nstenergy               = 5000      ; save energies every 10.0 ps
+nstlog                  = 5000      ; update log file every 10.0 ps
+nstxout-compressed      = 5000      ; save compressed coordinates every 10.0 ps
+compressed-x-grps       = non-Water 
+
+; Bond parameters
+continuation            = yes    
+constraint_algorithm    = lincs   
+constraints             = h-bonds  
+lincs_iter              = 1    
+lincs_order             = 4     
+
+; Nonbonded settings 
+cutoff-scheme           = Verlet 
+ns_type                 = grid    
+nstlist                 = 10 
+rcoulomb                = 1.0 
+rvdw                    = 1.0  
+
+; Electrostatics
+coulombtype             = PME   
+pme_order               = 4      
+fourierspacing          = 0.16    
+
+; Temperature coupling is on
+tcoupl                  = V-rescale 
+tc-grps                 = System    
+tau_t                   = 0.1       
+ref_t                   = 300       
+
+; Pressure coupling is off
+pcoupl                  = Parrinello-Rahman     
+pcoupltype              = semiisotropic         
+tau_p                   = 2.0                   
+ref_p                   = 1.0 1.0              
+compressibility         = 4.5e-5 0            
+refcoord_scaling    = com
+
+; Periodic boundary conditions
+pbc                     = xyz       
+periodic-molecules      = yes
+
+; Dispersion correction
+DispCorr                = EnerPres  
+
+; Velocity generation
+gen_vel                 = no       
