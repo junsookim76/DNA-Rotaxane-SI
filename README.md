@@ -3,8 +3,8 @@ The list of folders and files included is as below.
  * Configuration files for simulations: (coordinates of DNA, water, ions)
    - folder name: config_prod
    - files:
-       circ(70,76,82,90)_lin32_set(1~4)init.gro
-       circ(70,76,82,90)_lin32_set(1~4)final.gro
+       circ(70,76,82,90)_lin32_set(1,2,3,4)init.gro
+       circ(70,76,82,90)_lin32_set(1,2,3,4)final.gro
  * MD parameters: (parameters for MD simulation)
    - folder name: mdp
    - files:
