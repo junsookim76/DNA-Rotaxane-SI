@@ -27,4 +27,6 @@ The list of folders and files included is as below.
 		   rotax_70_3.mpg 
 		   rotax_76_3.mpg 
 		   rotax_82_1.mpg 
- 		   rotax_90_1.mpg 
+ 		   rotax_90_1.mpg
+   - We realized that "QuickTime Player" in Mac may not properly play the movies. You may try other movie players such as GOM player or VLC media player.
+     
