@@ -17,16 +17,16 @@ The list of folders and files included is as below.
    - files for weak restraints in each subfolders
        posre_linear_DNA_chain_(A3,B3).itp 
   * Configuration files for analysis and visualization: (coordinates of DNA and ions)
-   - folder name: trajectory_for_visualization
-   - files:
+    - folder name: trajectory_for_visualization
+    - files:
        circ(70,76,82,90)_lin32_set(1,2,3,4)_init_DNAion.gro 
  	     circ(70,76,82,90)_lin32_set(1,2,3,4)_DNAion_dt10ns.xtc 
   * Movies: (movie of one trajectory for each DNA rotaxane)
-   - folder name: movie_files
-   - files:
+    - folder name: movie_files
+    - files:
 		   rotax_70_3.mpg 
 		   rotax_76_3.mpg 
 		   rotax_82_1.mpg 
  		   rotax_90_1.mpg
-   - We realized that "QuickTime Player" in Mac may not properly play the movies. You may try other movie players such as GOM player or VLC media player.
+    - We realized that "QuickTime Player" in Mac may not properly play the movies. You may try other movie players such as GOM player or VLC media player.
      
