@@ -1,4 +1,11 @@
 # DNA-Rotaxane-SI
+
+>Supporting Data 
+>
+>for "Structure and dynamics of double-stranded DNA rotaxanes" 
+>
+>by Song and Kim (2024)
+
 The list of folders and files included is as below.
  * Configuration files for simulations: (coordinates of DNA, water, ions)
    - folder name: config_prod
